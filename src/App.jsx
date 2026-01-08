@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route , Routes } from 'react-router-dom'
-import Homepage from './pages/Homepage'
+
 import LoginPage from './pages/LoginPage'
 import AboutPage from './pages/AboutPage'
 import RegisterPage from './pages/RegisterPage'
@@ -8,6 +8,7 @@ import MenuPage from './pages/MenuPage'
 import LayoutMain from './layouts/LayoutMain'
 import ContactUs from './pages/ContactUs'
 import ReservationsPage from './pages/ReservationsPage'
+import Homepage from './pages/HomePage'
 
 
 
