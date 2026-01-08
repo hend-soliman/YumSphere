@@ -4,6 +4,7 @@ import smokedBeef from '../assets/best-foods/Shredded-Smoked-Pulled-Beef-Sandwic
 import pumpkinJuice from '../assets/best-foods/pumpkin_juice_1.jpg'
 import milkShake from '../assets/best-foods/strawberrybananamilkshake-9.jpg'
 import blueberryShake from '../assets/best-foods/Blueberry-Kale-Smoothie.jpg'
+import { Field, Form, Formik } from 'formik'
 
 export default function Homepage() {
   const bestFoods=  [
@@ -40,7 +41,7 @@ export default function Homepage() {
     visibleImages.push(bestFoods[(index + i) % bestFoods.length]);
   }
   return (
-    <div className='bg-white h-dvh flex flex-col w-full overflow-auto'>
+    <div className='bg-white min-h-dvh flex flex-col w-full '>
       {/* دودو هنا الجزء بتاعك الاول فى HomePage */}
       <div>
 
@@ -119,6 +120,67 @@ export default function Homepage() {
         ))}
       </div>
       </div>
+      {/*Other pages later...............................*/}
+
+
+      
+      <div className=' w-full flex flex-col pt-5'>
+        <section className='w-full  flex flex-col items-center justify-items-center gap-3 pb-10'>
+           <h1 className='text-5xl text-neutral-950 font-bold'>Feel free to drop us a line!</h1>
+           <div className='w-[63%] flex flex-col items-center text-lg text-gray-700 line-clamp-2'>
+            <p>Let's talk if you have any query or suggestion. We are open to learn from you.</p>
+            <p>So don't hesitate to reach us anytime.</p>
+           </div>
+          </section>
+           
+          <div className='h-dvh bg-white flex flex-col gap-3'>
+           <Formik>
+            <Form className='w-full h-[400px]  gap-5 items-center flex'>
+
+              <div className='w-[50%] h-full flex flex-col gap-4'>
+               <Field className="input w-full rounded border border-gray-300 focus:outline-none
+    focus:border-orange-500
+    focus:ring-2
+    focus:ring-orange-500/40
+    transition bg-white text-gray-600" placeholder="Your Name"/>
+                <Field className="input w-full rounded border border-gray-300 focus:outline-none
+    focus:border-orange-500
+    focus:ring-2
+    focus:ring-orange-500/40
+    transition bg-white text-gray-600" placeholder="Subject"/>
+                <Field className="input w-full rounded border border-gray-300 focus:outline-none
+    focus:border-orange-500
+    focus:ring-2
+    focus:ring-orange-500/40
+    transition bg-white text-gray-600" placeholder="Email Address"/>
+                <p className='text-xl text-gray-500 font-semibold'>
+                  <Field className="checkbox border-4 border-orange-400 opacity-20 checked:bg-orange-500 checked:opacity-60 checked:border-orange-300 checked:text-white" type="checkbox" checked={true}/>
+                  Send me a copy
+                </p>
+              </div>
+
+              <div className='w-[50%] h-full flex flex-col gap-4'>
+                     <textarea className='textarea w-full bg-blue h-[38%]
+                     rounded border border-gray-300 focus:outline-none
+    focus:border-orange-500
+    focus:ring-2
+    focus:ring-orange-500/40
+    transition bg-white text-gray-600
+    resize-none
+    placeholder:text-lg
+                     '
+                     placeholder='Type your message here' 
+                     ></textarea>
+                     <button className='btn bg-neutral-950 text-white text-xl rounded w-[40%] hover:bg-neutral-800'>GIVE US A SHOT</button>
+              </div>
+
+            </Form>
+            
+
+           </Formik>
+              </div>
+      </div>
+
 
 
     </div>

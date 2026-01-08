@@ -6,7 +6,7 @@ import Container from '../pages/Container';
 
 export default function LayoutMain() {
   return (
-    <div className='w-full bg-white'>
+    <div className='w-full  bg-white'>
       <NavBar />
       <Container>
       <Outlet />
