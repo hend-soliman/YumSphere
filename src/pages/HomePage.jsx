@@ -231,6 +231,7 @@ export default function Homepage() {
 
               <div className="w-[50%] h-full flex flex-col gap-4">
                 <Field
+                  as="textarea"
                   name="message"
                   placeholder="Type your message here"
                   className="textarea w-full h-[38%] resize-none
