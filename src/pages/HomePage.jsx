@@ -8,6 +8,7 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import StarRating from '../layouts/StarRating'
 import pizzaSlides from '../assets/pizza-slides.png'
+import { GiCancel } from "react-icons/gi";
 import * as Yup from 'yup'
 
 export default function Homepage() {
@@ -39,7 +40,7 @@ export default function Homepage() {
     },
   ]
 
-  const [usersOpenion, setUserOpenion] = useState([
+  const usersOpenion = [
     {
       rating:3,
       desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, turpis at imperdiet fringilla, ante arcu vehicula lectus, nec porta urna nulla ac neque. Pellentesque hendrerit purus nulla, vel dapibus purus commodo sit amet. Fusce lacinia, libero pellentesque laoreet euismod, ipsum ante accumsan sapien, at viverra lacus ex in massa. Vestibulum quis nisl id nibh consectetur auctor. Proin elementum sem id dui pretium tristique a et urna. Duis ut bibendum orci. Aliquam tincidunt justo id auctor pulvinar.',
@@ -57,20 +58,23 @@ export default function Homepage() {
       desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, turpis at imperdiet fringilla, ante arcu vehicula lectus, nec porta urna nulla ac neque. Pellentesque hendrerit purus nulla, vel dapibus purus commodo sit amet. Fusce lacinia, libero pellentesque laoreet euismod, ipsum ante accumsan sapien, at viverra lacus ex in massa. Vestibulum quis nisl id nibh consectetur auctor. Proin elementum sem id dui pretium tristique a et urna. Duis ut bibendum orci.',
       name:'Ramy Emad'
     }
-  ])
+  ]
 
   const [bestFoodsIndex, setBestFoodsIndex] = useState(0);
   const [usersOpenionIndex, setUsersOpenionIndex] = useState(0);
+  const [pauseSlider,setPauseSlider] = useState(false);
+  const [sliderModal,setSliderModal] = useState(false);
 
   useEffect(() => {
     if(bestFoods.length === 0) return;
+    if (pauseSlider) return;
     
       const interval = setInterval(() => {
       setBestFoodsIndex((prev) => (prev + 1) % bestFoods.length)
     }, 2000)
     
     return () => clearInterval(interval)
-  }, [bestFoods.length])
+  }, [bestFoods.length,pauseSlider])
 
   useEffect(() => {
  if(usersOpenion.length === 0) return;
@@ -92,6 +96,11 @@ export default function Homepage() {
   const visibleImages = []
   for (let i = 0; i < 4; i++) {
     visibleImages.push(bestFoods[(bestFoodsIndex + i) % bestFoods.length])
+  }
+
+  const visibleImagesOnSmallDevice =[]
+  for(let i =0 ; i < 1; i++){
+    visibleImagesOnSmallDevice.push(bestFoods[(bestFoodsIndex + i) % bestFoods.length])
   }
 
   const validationSchema = Yup.object({
@@ -129,12 +138,12 @@ export default function Homepage() {
     <div className="bg-white min-h-dvh flex flex-col w-full">
       
 
-      <div className="w-full h-dvh flex flex-col gap-20 justify-items-center">
-        <h2 className="text-6xl font-bold text-neutral-950 self-center">
+      <div className="w-full h-dvh flex flex-col mt-5 lg:mt-0 gap-5 lg:gap-20 justify-items-center">
+        <h2 className="text-2xl lg:text-6xl self-end mr-2 lg:mr-0 font-bold text-neutral-950 lg:self-center">
           Taste Our Foods & Enjoy
         </h2>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className=" hidden lg:grid lg:grid-cols-4  gap-4">
           {visibleImages.map((el, i) => (
             <div
               key={i + 1}
@@ -152,6 +161,91 @@ export default function Homepage() {
                   <p className="text-sm opacity-90">{el.desc}</p>
                 </div>
               </div>
+
+              {i === 0 && (
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-3 top-1/2 -translate-y-1/2
+                    w-10 h-10 flex items-center justify-center
+                    bg-orange-400/80 text-white rounded-full
+                    shadow-lg opacity-0 group-hover:opacity-100
+                    transition hover:scale-110"
+                >
+                  ◀
+                </button>
+              )}
+
+              {i === 3 && (
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-3 top-1/2 -translate-y-1/2
+                    w-10 h-10 flex items-center justify-center
+                    bg-orange-400/80 text-white rounded-full
+                    shadow-lg opacity-0 group-hover:opacity-100
+                    transition hover:scale-110"
+                >
+                  ▶
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className='grid grid-cols-1 w-full lg:hidden '>
+            {visibleImagesOnSmallDevice.map((el, i) => (
+            <div
+              key={i + 1}
+              className="
+              relative flex justify-center group overflow-hidden rounded-xl
+              "
+              onClick={() => {
+                    setPauseSlider(true)
+                    setSliderModal(true)
+                      }}
+
+            >
+              <img
+                src={el.img}
+                alt=""
+                className="h-100 w-[90%] object-cover backdrop-blur-sm rounded-xl"
+              />
+              
+
+              {sliderModal && <div
+    className='
+      absolute inset-0
+      bg-black/60
+      flex items-center justify-center
+      text-white text-center px-4
+      transition-opacity duration-300
+      '
+    onClick={(e) => e.stopPropagation()}
+      
+    
+  >
+    <GiCancel
+    className='
+    absolute
+    top-10
+    right-10
+    text-2xl
+    '
+    onClick={(e)=>{
+      e.stopPropagation()
+      setSliderModal(false)
+      setPauseSlider(false)
+    }
+    }
+     />
+    <div>
+      <h3 className="text-lg font-bold mb-2">
+        {el.name}
+      </h3>
+      <p className="text-sm">
+        {el.desc}
+      </p>
+    </div>
+  </div>}
 
               {i === 0 && (
                 <button
