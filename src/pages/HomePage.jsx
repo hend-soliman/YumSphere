@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import spicyChicken from '../assets/best-foods/chicken-spaghetti.jpg'
 import smokedBeef from '../assets/best-foods/Shredded-Smoked-Pulled-Beef-Sandwiches.jpg'
 import pumpkinJuice from '../assets/best-foods/pumpkin_juice_1.jpg'
 import milkShake from '../assets/best-foods/strawberrybananamilkshake-9.jpg'
 import blueberryShake from '../assets/best-foods/Blueberry-Kale-Smoothie.jpg'
+import { RiDoubleQuotesL } from "react-icons/ri";
 import { ErrorMessage, Field, Form, Formik } from 'formik'
+import StarRating from '../layouts/StarRating'
+import pizzaSlides from '../assets/pizza-slides.png'
 import * as Yup from 'yup'
 
 export default function Homepage() {
@@ -36,27 +39,59 @@ export default function Homepage() {
     },
   ]
 
-  const [index, setIndex] = useState(0)
+  const [usersOpenion, setUserOpenion] = useState([
+    {
+      rating:3,
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, turpis at imperdiet fringilla, ante arcu vehicula lectus, nec porta urna nulla ac neque. Pellentesque hendrerit purus nulla, vel dapibus purus commodo sit amet. Fusce lacinia, libero pellentesque laoreet euismod, ipsum ante accumsan sapien, at viverra lacus ex in massa. Vestibulum quis nisl id nibh consectetur auctor. Proin elementum sem id dui pretium tristique a et urna. Duis ut bibendum orci. Aliquam tincidunt justo id auctor pulvinar.',
+      name:'Karim Emad'
+    },
+
+   {
+      rating:4,
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, turpis at imperdiet fringilla, ante arcu vehicula lectus, nec porta urna nulla ac neque. Pellentesque hendrerit purus nulla, vel dapibus purus commodo sit amet. Fusce lacinia, libero pellentesque laoreet euismod, ipsum ante accumsan sapien, at viverra lacus ex in massa. Vestibulum quis nisl id nibh consectetur auctor. Proin elementum sem id dui pretium tristique a et urna. Duis ut bibendum orci.',
+      name:'Hend Adel'
+    }
+    ,
+    {
+      rating:2,
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, turpis at imperdiet fringilla, ante arcu vehicula lectus, nec porta urna nulla ac neque. Pellentesque hendrerit purus nulla, vel dapibus purus commodo sit amet. Fusce lacinia, libero pellentesque laoreet euismod, ipsum ante accumsan sapien, at viverra lacus ex in massa. Vestibulum quis nisl id nibh consectetur auctor. Proin elementum sem id dui pretium tristique a et urna. Duis ut bibendum orci.',
+      name:'Ramy Emad'
+    }
+  ])
+
+  const [bestFoodsIndex, setBestFoodsIndex] = useState(0);
+  const [usersOpenionIndex, setUsersOpenionIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
+    if(bestFoods.length === 0) return;
+    
+      const interval = setInterval(() => {
+      setBestFoodsIndex((prev) => (prev + 1) % bestFoods.length)
     }, 2000)
-
+    
     return () => clearInterval(interval)
-  }, [index])
+  }, [bestFoods.length])
+
+  useEffect(() => {
+ if(usersOpenion.length === 0) return;
+
+ const interval = setInterval(() => {
+   setUsersOpenionIndex((prev) => (prev + 1) % usersOpenion.length)
+ },4000)
+  return () => clearInterval(interval)
+  },[usersOpenion.length])
 
   const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % bestFoods.length)
+    setBestFoodsIndex((prev) => (prev + 1) % bestFoods.length)
   }
 
   const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? bestFoods.length - 1 : prev - 1))
+    setBestFoodsIndex((prev) => (prev === 0 ? bestFoods.length - 1 : prev - 1))
   }
 
   const visibleImages = []
   for (let i = 0; i < 4; i++) {
-    visibleImages.push(bestFoods[(index + i) % bestFoods.length])
+    visibleImages.push(bestFoods[(bestFoodsIndex + i) % bestFoods.length])
   }
 
   const validationSchema = Yup.object({
@@ -83,9 +118,16 @@ export default function Homepage() {
     console.log(values)
   }
 
+  const visibleReviews =[
+    usersOpenion[usersOpenionIndex]
+  ];
+  
+  
+ 
+
   return (
     <div className="bg-white min-h-dvh flex flex-col w-full">
-      <div></div>
+      
 
       <div className="w-full h-dvh flex flex-col gap-20 justify-items-center">
         <h2 className="text-6xl font-bold text-neutral-950 self-center">
@@ -156,7 +198,7 @@ export default function Homepage() {
           </div>
         </section>
 
-        <div className="h-dvh bg-white flex flex-col gap-3">
+        <div className=" bg-white flex flex-col gap-3">
           <Formik
             initialValues={{
               username: '',
@@ -258,6 +300,43 @@ export default function Homepage() {
             </Form>
           </Formik>
         </div>
+      </div>
+
+      <div className='w-full flex justify-center pb-30 relative'>
+          { visibleReviews.map((el,index) => {
+          return (
+            <div className='w-[40%] min-h-[420px]  flex flex-col gap-5 items-center '>
+              <RiDoubleQuotesL />
+              <StarRating rating={el.rating}/>
+              <p className='text-center text-gray-700'>{el.desc}</p>
+              <p className='text-black'>-{el.name}</p>
+            </div>
+            
+
+          )  
+
+          })
+            
+
+          }
+          <img
+  src={pizzaSlides}
+  alt="pizza"
+  className="
+    absolute
+    bottom-0
+    -right-[190px]
+    w-110
+    pointer-events-none
+    opacity-70
+  "
+/>
+
+           
+
+        
+        
+
       </div>
     </div>
   )
