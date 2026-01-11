@@ -10,6 +10,7 @@ import StarRating from '../layouts/StarRating'
 import pizzaSlides from '../assets/pizza-slides.png'
 import { GiCancel } from "react-icons/gi";
 import * as Yup from 'yup'
+import CateringSection from '../components/CateringSection'
 
 export default function Homepage() {
   const bestFoods = [
@@ -430,8 +431,9 @@ export default function Homepage() {
 
         
         
-
+ 
       </div>
+     <CateringSection/>
     </div>
   )
 }
