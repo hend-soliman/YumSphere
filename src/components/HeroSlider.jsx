@@ -1,17 +1,28 @@
 import { GiCancel } from "react-icons/gi"
+import { useNavigate } from "react-router-dom"
 
 export default function HeroSlider({bestFoods,bestFoodsIndex,visibleImages,prevSlide,nextSlide,visibleImagesOnSmallDevice,sliderModal,setPauseSlider,setSliderModal,setBestFoodsIndex}) {
     
-
-    
+    const navigate = useNavigate()
+    const navigateToLoginPage = () => {
+     navigate('/login')
+    }
  
     
   return (
     <div className="w-full  flex flex-col mb-15 mt-5 lg:mt-8 gap-5 lg:gap-20 justify-items-center">
-            <h2 className="text-2xl lg:text-6xl self-end mr-5 lg:mr-0 font-bold text-neutral-950 lg:self-center">
+
+        <div className="w-full flex justify-between items-center">
+          <h2 className="text-2xl lg:text-6xl self-end mr-5 lg:mr-0 font-bold text-neutral-950 lg:self-center">
               Taste Our Foods & Enjoy
             </h2>
+
+            <button className="btn btn-primary w-[30%]"
+                    onClick={navigateToLoginPage}
+            >Login</button>
     
+        </div>
+            
             <div className=" hidden lg:grid lg:grid-cols-4 gap-4">
               {visibleImages.map((el, i) => (
                 <div
