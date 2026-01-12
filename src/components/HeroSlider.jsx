@@ -35,8 +35,8 @@ export default function HeroSlider({bestFoods,bestFoodsIndex,visibleImages,prevS
                   {i === 0 && (
                     <button
                       onClick={prevSlide}
-                      className="absolute left-3 top-1/2 -translate-y-1/2
-                        w-10 h-10 flex items-center justify-center
+                      className="hidden lg:absolute left-3 top-1/2 -translate-y-1/2
+                        w-10 h-10 lg:flex items-center justify-center
                         bg-orange-400/80 text-white rounded-full
                         shadow-lg opacity-0 group-hover:opacity-100
                         transition hover:scale-110"
@@ -118,31 +118,7 @@ export default function HeroSlider({bestFoods,bestFoodsIndex,visibleImages,prevS
         </div>
       </div>}
                  
-                  {!sliderModal && i === 0 && (
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-3 top-1/2 -translate-y-1/2
-                        w-10 h-10 flex items-center justify-center
-                        bg-orange-400/80 text-white rounded-full
-                        shadow-lg opacity-100 lg:opacity-0 lg:group-hover:opacity-100
-    "
-                    >
-                      ◀
-                    </button>
-                  )}
-    
-                  {!sliderModal && i === 3 && (
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-3 top-1/2 -translate-y-1/2
-                        w-10 h-10 flex items-center justify-center
-                        bg-orange-400/80 text-white rounded-full
-                        shadow-lg opacity-100 lg:opacity-0 lg:group-hover:opacity-100
-    "
-                    >
-                      ▶
-                    </button>
-                  )}
+                 
                 </div>
               ))}
             </div>

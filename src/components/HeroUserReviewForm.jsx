@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 
 export default function HeroUserReviewForm({validationSchema, giveOpenion}) {
   return (
-    <div className="w-full flex flex-col mb-30 lg:mb-0 pt-0 lg:pt-5">
+    <div className="w-full flex flex-col mb-16 lg:mb-0 pt-0  lg:pt-5">
         <section className="w-full flex flex-col items-center  lg:px-0 gap-3 pb-10">
           <h1 className=" text-[19px] px-5 w-full lg:text-5xl text-neutral-950 font-extrabold lg:font-bold ">
             Feel free to drop us a line!
