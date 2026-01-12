@@ -9,7 +9,7 @@ export default function HeroUserReviewForm({validationSchema, giveOpenion}) {
             Feel free to drop us a line!
           </h1>
 
-          <div className=" w-full  text-center lg:text-left px-3 lg:w-[63%] flex flex-col  text-lg text-gray-700 line-clamp-2">
+          <div className=" w-full  text-center lg:text-left px-3 lg:pl-6 lg:w-[100%] flex flex-col  text-lg text-gray-700 line-clamp-2">
             <p>
               Let's talk if you have any query or suggestion. We are open to learn
               from you.
