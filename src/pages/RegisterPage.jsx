@@ -1,8 +1,39 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import registerImg from "../assets/register-food-img.jpg";
+import * as Yup from 'yup'
 
 export default function RegisterPage() {
+
+  const registerUser = (values) =>{
+    console.log(values);
+  }
+
+  const validationSchema = Yup.object({
+  username: Yup.string()
+    .trim()
+    .min(3, "Name must be at least 3 characters")
+    .max(30, "Name must be less than 30 characters")
+    .required("Name is required"),
+
+  email: Yup.string()
+    .trim()
+    .email("Please enter a valid email address")
+    .required("Email is required"),
+
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
+      "Password must contain uppercase, lowercase, number and special character"
+    )
+    .required("Password is required"),
+
+  passwordconfirmation: Yup.string()
+    .oneOf([Yup.ref("password")], "Passwords do not match")
+    .required("Confirm password is required"),
+});
+  
   return (
     <div className="w-full fixed inset-0 h-dvh py-5 bg-gray-400 flex justify-center items-center">
       <div className=" w-[90%] lg:w-[35%] h-full lg:h-[90%] relative overflow-hidden rounded-2xl shadow bg-white">
@@ -37,11 +68,23 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          <Formik>
+          <Formik 
+          initialValues={{
+           username:'',
+           email:'',
+           password:'',
+           passwordconfirmation:'',
+          }}
+
+          validationSchema={validationSchema}
+
+          onSubmit={(values) => registerUser(values)}
+          
+          >
             <Form className="w-full h-full flex flex-col items-center gap-5">
                 <span className="w-[90%] h-[10%]   flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Full Name</p>
-                <Field className="input w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg 
+                <Field className="input text-xl lg:text-lg  w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg 
                                    focus:border-orange-500
                                      focus:ring-2
                                      focus:ring-orange-500/40
@@ -49,13 +92,20 @@ export default function RegisterPage() {
                                      transition
                 "
                        placeholder="Your Name"
+                       name='username'
+                />
+                <ErrorMessage 
+                  name="username"
+                  component="p"
+                  className="text-red-500 text-sm"
+
                 />
 
                 </span>
 
                  <span className="w-[90%] h-[10%]  flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Email Address</p>
-                <Field className="input w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+                <Field className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
                                    focus:border-orange-500
                                      focus:ring-2
                                       focus:ring-orange-500/40
@@ -63,13 +113,20 @@ export default function RegisterPage() {
                                      transition
                                   "
                        placeholder="example@email.com"
+                       name="email"
+                />
+                <ErrorMessage 
+                  name="email"
+                  component="p"
+                  className="text-red-500 text-sm"
+
                 />
 
                 </span>
 
                 <span className="w-[90%] h-[10%] flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Password</p>
-                <Field type="password" className="input w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+                <Field type="password" className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
                                                    focus:border-orange-500
                                                      focus:ring-2
                                                      focus:ring-orange-500/40
@@ -77,13 +134,20 @@ export default function RegisterPage() {
                                                      transition
                 "
                        placeholder="Password"
+                       name='password'
+                />
+                <ErrorMessage 
+                  name="password"
+                  component="p"
+                  className="text-red-500 text-sm"
+
                 />
 
                 </span>
 
                                 <span className="w-[90%] h-[10%] flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Confirm Password</p>
-                <Field type="password" className="input w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+                <Field type="password" className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
                                                    focus:border-orange-500
                                                      focus:ring-2
                                                      focus:ring-orange-500/40
@@ -91,6 +155,13 @@ export default function RegisterPage() {
                                                      transition
                 "
                        placeholder="Confirm Password"
+                       name="passwordconfirmation"
+                />
+                <ErrorMessage 
+                  name="passwordconfirmation"
+                  component="p"
+                  className="text-red-500 text-sm"
+
                 />
 
                 </span>
@@ -99,7 +170,9 @@ export default function RegisterPage() {
                   <p className="pl-3 text-neutral-900 text-lg w-[95%] font-semibold ">By signing up, you agree to our <span className="text-orange-600">Terms of service</span> and <span className="text-orange-600">Privacy Policy</span></p>
                 </span>
 
-                <button className="btn bg-orange-400 border-0 w-[90%] text-white text-xl hover:bg-orange-300">Create Account</button>
+                <button
+                type="submit"
+                 className="btn bg-orange-400 border-0 w-[90%] text-white text-xl hover:bg-orange-300">Create Account</button>
                 <span className="w-full h-[30%] lg:h-[15%] flex text-center">
                   <p className="pl-3 text-neutral-900 text-lg w-[95%] font-semibold ">Already have an account? <Link to="/login" className="  text-orange-600 bg-transparent border-0">Login</Link></p>
                 </span>
