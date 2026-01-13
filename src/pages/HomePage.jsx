@@ -10,6 +10,7 @@ import HeroSlider from '../components/HeroSlider'
 import HeroUserReviewForm from '../components/HeroUserReviewForm'
 import HeroUserReviews from '../components/HeroUserReviews'
 import CateringSection from '../components/CateringSection'
+import Location from '../components/Location'
 
 export default function Homepage() {
   const bestFoods = [
@@ -160,6 +161,7 @@ export default function Homepage() {
     <HeroUserReviewForm validationSchema={validationSchema} giveOpenion={giveOpenion} />
     <HeroUserReviews visibleReviews={visibleReviews} pizzaSlides={pizzaSlides} />
     <CateringSection></CateringSection>
+    <Location/>
      
 
       
