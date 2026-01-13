@@ -9,6 +9,7 @@ import * as Yup from 'yup'
 import HeroSlider from '../components/HeroSlider'
 import HeroUserReviewForm from '../components/HeroUserReviewForm'
 import HeroUserReviews from '../components/HeroUserReviews'
+import CateringSection from '../components/CateringSection'
 
 export default function Homepage() {
   const bestFoods = [
@@ -158,7 +159,7 @@ export default function Homepage() {
 
     <HeroUserReviewForm validationSchema={validationSchema} giveOpenion={giveOpenion} />
     <HeroUserReviews visibleReviews={visibleReviews} pizzaSlides={pizzaSlides} />
-
+    <CateringSection></CateringSection>
      
 
       
