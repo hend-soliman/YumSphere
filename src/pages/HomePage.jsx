@@ -93,10 +93,6 @@ export default function Homepage() {
     }
   ]
 
-  
-
-  
-
   useEffect(() => {
  if(usersOpenion.length === 0) return;
 
@@ -141,9 +137,6 @@ export default function Homepage() {
   const visibleReviews =[
     usersOpenion[usersOpenionIndex]
   ];
-  
-  
- 
 
   return (
     <div className="bg-white min-h-dvh flex flex-col gap-20 lg:gap-0 w-full">
