@@ -93,13 +93,7 @@ export default function Homepage() {
     }
   ]
 
-<<<<<<< HEAD
-=======
-  
 
-  
-
->>>>>>> karim-branch
   useEffect(() => {
  if(usersOpenion.length === 0) return;
 
@@ -144,12 +138,8 @@ export default function Homepage() {
   const visibleReviews =[
     usersOpenion[usersOpenionIndex]
   ];
-<<<<<<< HEAD
-=======
   
   
- 
->>>>>>> karim-branch
 
   return (
     <div className="bg-white min-h-dvh flex flex-col gap-20 lg:gap-0 w-full">
