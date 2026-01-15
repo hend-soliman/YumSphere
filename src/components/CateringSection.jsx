@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 import cateringImg from "../assets/pancake_PNG94.png";
 
@@ -22,34 +22,14 @@ export default function CateringSection() {
         </h2>
 
         <p className="text-[#748194] mt-6 md:text-lg animate__animated animate__zoomIn">
-=======
-import React, { useRef } from 'react'
-import cateringImg from "../assets/pancake_PNG94.png";
 
-export default function CateringSection() {
-
-
-    
-  return (
-     <section className="py-32 ">
-      <div className="container mx-auto px-4 max-w-3xl text-center ">
-        <span className=" text-2xl font-bold text-[#4d5969] ">
-          Catering
-        </span>
-
-        <h2 className="text-4xl md:text-5xl   mt-4 text-[#0b1727] animate__animated animate__fadeInUp">
-          We Manage Your Events
-        </h2>
-
-        <p className="text-[#748194] mt-6 md:text-lg animate__animated animate__zoomIn ">
->>>>>>> karim-branch
           Allow our Chef to deliver the perfect private dinner or cocktail party
           experience in your home; or let us simply add a little extra flavor to
           your next office meeting, boat trip, or beach picnic.
         </p>
       </div>
 
-<<<<<<< HEAD
+
     
       <div className="container mt-14 animate__animated animate__bounceIn animate__delay-1s">
         <div className="mx-auto max-w-200 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 px-6 md:px-12 py-10 md:py-12">
@@ -68,29 +48,7 @@ export default function CateringSection() {
             <button onClick={scrollToLocation} 
               className="btn bg-[#ffc554] font-bold text-[#4d5969] border-none hover:bg-[#ffc554] shadow-md hover:shadow-lg px-8 py-3 text-[16px] md:text-[18px]">
               HIRE US NOW
-=======
 
-      <div className="container  mt-6 animate__animated animate__bounceIn animate__delay-1s">
-        <div className="rounded-2xl shadow-2xl   flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-          
-    
-          <div className="flex-1 flex justify-center md:justify-end animate__animated animate__heartBeat">
-            <img
-              src={cateringImg}
-              alt="Delicious catering service"
-              className=" object-cover"
-            />
-          </div>
-
-        
-          <div className="text-center align-center md:text-left flex-1 gap-5 space-y-2 md:space-y-4">
-            <h4 className="text-lg md:text-xl text-[#748194]">
-              We Cater in Weddings, <br /> Corporate Functions and Events
-            </h4>
-
-            <button className="btn bg-[#ffc554] text-[#0b1727] border-none hover:bg-[#ffc554] transition-all duration-300 shadow-md hover:shadow-lg px-6 py-3 text-lg md:text-xl">
-              Hire Us Now
->>>>>>> karim-branch
             </button>
           </div>
 
@@ -98,10 +56,6 @@ export default function CateringSection() {
       </div>
     </section>
   );
-<<<<<<< HEAD
-}
-=======
+
 }
 
-  
->>>>>>> karim-branch
