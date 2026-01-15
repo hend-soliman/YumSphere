@@ -76,7 +76,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-black/35 blur-lg"></div>
 
   {/* المحتوى */}
-  <div className="relative z-20 mt-8 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+  <div className="relative z-20 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
     {menu[activeTab]?.map((item) => {
       const STRAPI_URL = "https://8d16dcd4d7d0.ngrok-free.app";
       const relativePath = item.img?.url;
