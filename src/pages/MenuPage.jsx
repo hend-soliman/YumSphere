@@ -2,7 +2,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import pizza from '../assets/best-foods/Blueberry-Kale-Smoothie.jpg'
-import qs from 'qs';
 import  API_URL from '../config/api';
 
 
