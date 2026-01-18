@@ -17,9 +17,9 @@ export default function HeroSlider({bestFoods,bestFoodsIndex,visibleImages,prevS
               Taste Our Foods & Enjoy
             </h2>
 
-            <button className="btn btn-primary w-[30%]"
+            {/* <button className="btn btn-primary w-[30%]"
                     onClick={navigateToLoginPage}
-            >Login</button>
+            >Login</button> */}
     
         </div>
             

@@ -43,7 +43,7 @@ export default function RegisterPage() {
 
         {/* Background Image */}
         <div
-          className="absolute top-90 inset-0 z-0 bg-cover bg-no-repeat bg-bottom opacity-60"
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center opacity-60"
           style={{ backgroundImage: `url(${registerImg})` }}
         />
 
