@@ -3,6 +3,7 @@ import React from 'react'
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Container from '../pages/Container';
+import Footer from '../components/Footer';
 
 export default function LayoutMain() {
   return (
@@ -11,6 +12,7 @@ export default function LayoutMain() {
       <Container>
       <Outlet />
     </Container>
+    <Footer/>
     </div>
     
       
