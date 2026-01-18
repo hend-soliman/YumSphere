@@ -1,3 +1,4 @@
+
 import React from "react";
 import cateringImg from "../assets/pancake_PNG94.png";
 
@@ -21,11 +22,13 @@ export default function CateringSection() {
         </h2>
 
         <p className="text-[#748194] mt-6 md:text-lg animate__animated animate__zoomIn">
+
           Allow our Chef to deliver the perfect private dinner or cocktail party
           experience in your home; or let us simply add a little extra flavor to
           your next office meeting, boat trip, or beach picnic.
         </p>
       </div>
+
 
     
       <div className="container mt-14 animate__animated animate__bounceIn animate__delay-1s">
@@ -45,6 +48,7 @@ export default function CateringSection() {
             <button onClick={scrollToLocation} 
               className="btn bg-[#ffc554] font-bold text-[#4d5969] border-none hover:bg-[#ffc554] shadow-md hover:shadow-lg px-8 py-3 text-[16px] md:text-[18px]">
               HIRE US NOW
+
             </button>
           </div>
 
@@ -52,4 +56,6 @@ export default function CateringSection() {
       </div>
     </section>
   );
+
 }
+

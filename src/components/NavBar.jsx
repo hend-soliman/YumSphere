@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi";
@@ -14,9 +15,11 @@ export default function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+
   return (
     <nav className="w-full bg-black">
       <div className="container mx-auto max-w-6xl">
+
         <div className="flex items-center justify-between py-4 relative">
 
           <button className='md:hidden text-white hover:text-[#ffc554] order-1' onClick={()=>setIsOpen(!isOpen)}>
@@ -50,14 +53,19 @@ export default function NavBar() {
                 className={({isActive}) =>  `block transition transform duration-200 ${isActive ? "text-[#ffc554] scale-105": "text-[#748194] hover:text-[#ffc554] hover:scale-105" }`}>
                   {link.name}
                 </NavLink>
+
               </li>
             ))}
           </ul>
         )}
       </div>
     </nav>
+
   );
+
 }
+
+
 
 
 

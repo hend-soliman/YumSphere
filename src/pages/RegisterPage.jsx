@@ -1,7 +1,9 @@
+
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import registerImg from "../assets/register-food-img.jpg";
 import * as Yup from 'yup'
+
 
 export default function RegisterPage() {
 
@@ -34,6 +36,7 @@ export default function RegisterPage() {
     .required("Confirm password is required"),
 });
   
+
   return (
     <div className="w-full fixed inset-0 h-dvh py-5 bg-gray-400 flex justify-center items-center">
       <div className=" w-[90%] lg:w-[35%] h-full lg:h-[90%] relative overflow-hidden rounded-2xl shadow bg-white">
@@ -68,6 +71,7 @@ export default function RegisterPage() {
             </p>
           </div>
 
+
           <Formik 
           initialValues={{
            username:'',
@@ -85,6 +89,7 @@ export default function RegisterPage() {
                 <span className="w-[90%] h-[10%]   flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Full Name</p>
                 <Field className="input text-xl lg:text-lg  w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg 
+
                                    focus:border-orange-500
                                      focus:ring-2
                                      focus:ring-orange-500/40
@@ -92,6 +97,7 @@ export default function RegisterPage() {
                                      transition
                 "
                        placeholder="Your Name"
+
                        name='username'
                 />
                 <ErrorMessage 
@@ -99,13 +105,17 @@ export default function RegisterPage() {
                   component="p"
                   className="text-red-500 text-sm"
 
+
                 />
 
                 </span>
 
                  <span className="w-[90%] h-[10%]  flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Email Address</p>
+
                 <Field className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+
+ im-branch
                                    focus:border-orange-500
                                      focus:ring-2
                                       focus:ring-orange-500/40
@@ -113,6 +123,7 @@ export default function RegisterPage() {
                                      transition
                                   "
                        placeholder="example@email.com"
+
                        name="email"
                 />
                 <ErrorMessage 
@@ -120,13 +131,17 @@ export default function RegisterPage() {
                   component="p"
                   className="text-red-500 text-sm"
 
+
+
                 />
 
                 </span>
 
                 <span className="w-[90%] h-[10%] flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Password</p>
+
                 <Field type="password" className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+arim-branch
                                                    focus:border-orange-500
                                                      focus:ring-2
                                                      focus:ring-orange-500/40
@@ -134,6 +149,7 @@ export default function RegisterPage() {
                                                      transition
                 "
                        placeholder="Password"
+
                        name='password'
                 />
                 <ErrorMessage 
@@ -141,13 +157,16 @@ export default function RegisterPage() {
                   component="p"
                   className="text-red-500 text-sm"
 
+
                 />
 
                 </span>
 
                                 <span className="w-[90%] h-[10%] flex flex-col relative  ">
                   <p className="text-black z-10 text-lg absolute top-3 left-[13px]">Confirm Password</p>
+
                 <Field type="password" className="input text-xl lg:text-lg w-full z-0 pt-7 bg-white text-gray-500 h-full border-1 flex-col items-end border-gray-300 self-center placeholder:text-lg
+
                                                    focus:border-orange-500
                                                      focus:ring-2
                                                      focus:ring-orange-500/40
@@ -162,6 +181,7 @@ export default function RegisterPage() {
                   component="p"
                   className="text-red-500 text-sm"
 
+
                 />
 
                 </span>
@@ -170,9 +190,11 @@ export default function RegisterPage() {
                   <p className="pl-3 text-neutral-900 text-lg w-[95%] font-semibold ">By signing up, you agree to our <span className="text-orange-600">Terms of service</span> and <span className="text-orange-600">Privacy Policy</span></p>
                 </span>
 
+
                 <button
                 type="submit"
                  className="btn bg-orange-400 border-0 w-[90%] text-white text-xl hover:bg-orange-300">Create Account</button>
+
                 <span className="w-full h-[30%] lg:h-[15%] flex text-center">
                   <p className="pl-3 text-neutral-900 text-lg w-[95%] font-semibold ">Already have an account? <Link to="/login" className="  text-orange-600 bg-transparent border-0">Login</Link></p>
                 </span>
