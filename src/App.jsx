@@ -9,11 +9,8 @@ import MenuPage from './pages/MenuPage'
 import LayoutMain from './layouts/LayoutMain'
 import ContactUs from './pages/ContactUs'
 
-import ReservationsPage from './pages/ReservationsPage'
+
 import Homepage from './pages/HomePage'
-
-
-
 
 
 export default function App() {
@@ -26,19 +23,16 @@ export default function App() {
     <Route path='about' element={<AboutPage/>}/>
     <Route path='menu' element={<MenuPage/>}/>
     <Route path='contact' element={<ContactUs/>}/>
-    <Route path='reservations' element={<ReservationsPage/>}/>
+    
     </Route>
    
     <Route path='/login' element={<LoginPage/>}/>
     <Route path='/register' element={<RegisterPage/>}/> 
     <Route path="*" element={<h1>Error 404 | Page Not Found</h1>} />
 
-    
    </Routes>
    </BrowserRouter>
-
       </div>
-    
   )
 }
 

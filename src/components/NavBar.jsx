@@ -70,18 +70,8 @@ export default function NavBar() {
           <ul className="md:hidden flex flex-col gap-4 py-4">
             {links.map((link) => (
               <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block transition transform duration-200 ${
-                      isActive
-                        ? "text-[#ffc554] scale-105"
-                        : "text-[#748194] hover:text-[#ffc554] hover:scale-105"
-                    }`
-                  }
-                >
-                  {link.name}
+                <NavLink to={link.path} onClick={() => setIsOpen(false)} className={({ isActive }) =>
+                 `block transition transform duration-200 ${isActive? "text-[#ffc554] scale-105" : "text-[#748194] hover:text-[#ffc554] hover:scale-105"}`}>{link.name}
                 </NavLink>
               </li>
             ))}

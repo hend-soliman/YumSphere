@@ -1,7 +1,6 @@
 import React from 'react'
+import Location from "../components/Location";
 
 export default function ContactUs() {
-  return (
-    <div>ContactUs</div>
-  )
+  return <Location />;
 }

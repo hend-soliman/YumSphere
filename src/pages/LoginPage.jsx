@@ -20,12 +20,12 @@ export default function LoginPage() {
   });
 
   return (
-    <div className="w-full fixed inset-0 h-dvh flex justify-center items-center bg-gray-300">
+    <div className="w-full fixed inset-0 h-dvh flex justify-center items-center bg-gray-400">
    
       <div className="relative w-[90%] lg:w-[35%] h-[80%] rounded-2xl shadow-lg overflow-hidden bg-white">
         
         <div className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center opacity-60" style={{ backgroundImage: `url(${loginImg})` }}/>
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/50 to-white/30" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/95 via-white/20 to-white/30" />
         <div className="relative z-20 h-full flex flex-col justify-center py-1">
       
           <div className="px-6 text-center mb-5">
@@ -44,14 +44,14 @@ export default function LoginPage() {
       <div className="flex flex-col gap-1">
         <label htmlFor="email" className=" text-black font-medium">Email Address</label>
         <Field id="email" name="email" type="email" placeholder="example@email.com"
-          className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400  text-gray-800"/>
         <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
       </div>
 
       <div className="flex flex-col gap-1">
         <label htmlFor="password" className="text-black font-medium">Password</label>
         <Field id="password" name="password" type="password" placeholder="Your password"
-          className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400  text-gray-800"/>
         <ErrorMessage name="password" component="div" className="text-red-500 text-sm" />
       </div>
 

@@ -74,7 +74,7 @@ export default function Reservations({ isOpen, onClose }) {
           {({ setFieldValue, values }) => (
             <Form>
               <div className="grid grid-cols-2 gap-4 md:gap-5 p-4 md:p-8">
-                <div className="relative">
+                <div className="relative w-full">
                   <FaRegClock className="absolute left-4 top-4 text-[#748194]" />
                   <Field as="select" name="time" ref={timeSelectRef} className="w-full border border-[#d6e0f0] rounded-md pl-10 pr-10 py-2 md:py-3 text-[#9aa5b1]">
                     <option value="">Time</option>
