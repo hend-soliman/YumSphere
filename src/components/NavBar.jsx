@@ -23,8 +23,7 @@ export default function NavBar() {
 
           <button
             className="md:hidden text-white hover:text-[#ffc554] order-1"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+            onClick={() => setIsOpen(!isOpen)}>
             <HiMenu size={28} />
           </button>
 
@@ -42,9 +41,8 @@ export default function NavBar() {
                       isActive
                         ? "text-[#ffc554] scale-105"
                         : "text-[#748194] hover:text-[#ffc554] hover:scale-105"
-                    }`
-                  }
-                >
+                    }` }>
+
                   {link.name}
                 </NavLink>
               </li>
@@ -58,8 +56,7 @@ export default function NavBar() {
 
             <Link
               to="/login"
-              className="text-white hover:text-[#ffc554] ml-4"
-            >
+              className="text-white hover:text-[#ffc554] ml-4">
               <FiLogIn size={26} />
             </Link>
           </div>

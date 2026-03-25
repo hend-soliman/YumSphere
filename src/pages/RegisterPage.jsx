@@ -1,13 +1,18 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerImg from "../assets/register-food-img.jpg";
-import * as Yup from 'yup';
+import * as Yup from "yup";
+import useStore from "../store/cartStore";
 
 export default function RegisterPage() {
+  const navigate = useNavigate();
+  const login = useStore((state) => state.login);
 
   const registerUser = (values) => {
-    console.log(values);
-  }
+    console.log("Register values:", values);
+    login({ username: values.username, email: values.email });
+    navigate("/menu"); // مباشرة بعد التسجيل
+  };
 
   const validationSchema = Yup.object({
     username: Yup.string()
@@ -15,12 +20,10 @@ export default function RegisterPage() {
       .min(3, "Name must be at least 3 characters")
       .max(30, "Name must be less than 30 characters")
       .required("Name is required"),
-
     email: Yup.string()
       .trim()
       .email("Please enter a valid email address")
       .required("Email is required"),
-
     password: Yup.string()
       .min(8, "Password must be at least 8 characters")
       .matches(
@@ -28,7 +31,6 @@ export default function RegisterPage() {
         "Password must contain uppercase, lowercase, number and special character"
       )
       .required("Password is required"),
-
     passwordconfirmation: Yup.string()
       .oneOf([Yup.ref("password")], "Passwords do not match")
       .required("Confirm password is required"),
@@ -46,20 +48,12 @@ export default function RegisterPage() {
         <div className="absolute inset-0 z-10 backdrop-blur-0" />
 
         <div
-          className="
-            absolute inset-0 z-20
-            bg-gradient-to-b
-            from-white/95
-            via-white/20
-            to-white/30
-          "
+          className="absolute inset-0 z-20 bg-gradient-to-b from-white/95 via-white/20 to-white/30"
         />
 
         <div className="relative z-30 w-full h-full py-3">
           <div className="w-full pl-5 lg:pl-0 lg:w-full h-[20%] lg:h-[15%] flex flex-col gap-2 text-left lg:text-center lg:justify-center ">
-            <h2 className="text-black text-2xl font-semibold">
-              Create an Account
-            </h2>
+            <h2 className="text-black text-2xl font-semibold">Create an Account</h2>
             <p className="text-gray-400 text-lg">
               Join us and enjoy our delicious culinary delights!
             </p>

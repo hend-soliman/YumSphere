@@ -14,8 +14,5 @@ export default function LayoutMain() {
     </Container>
     <Footer/>
     </div>
-    
-      
-   
   );
 }
