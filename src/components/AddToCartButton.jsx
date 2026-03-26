@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-// import useCartStore from "../store/cartStore";
+// import useCartStore from "../store/CartStore";
 
 // export default function AddToCartButton({ item, isLoggedIn }) {
 //   const navigate = useNavigate();
@@ -28,7 +28,7 @@
 
 
 import { useNavigate } from "react-router-dom";
-import useStore from "../store/cartStore"; // تم تصحيح الاسم ليطابق default export
+import useStore from "../store/CartStore"; // تم تصحيح الاسم ليطابق default export
 
 export default function AddToCartButton({ item, isLoggedIn }) {
   const navigate = useNavigate();

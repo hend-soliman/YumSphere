@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import loginImg from "../assets/register-food-img.jpg";
 import * as Yup from "yup";
-import useStore from "../store/cartStore";
+import useStore from "../store/CartStore";
 
 export default function LoginPage() {
   const navigate = useNavigate();

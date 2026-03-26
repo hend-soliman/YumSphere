@@ -1,5 +1,5 @@
 // import React from "react";
-// import useCartStore from "../store/cartStore";
+// import useCartStore from "../store/CartStore";
 
 // export default function CartItem({ item }) {
 //   const increaseQty = useCartStore((state) => state.increaseQty);
@@ -40,7 +40,7 @@
 
 
 import React from "react";
-import useStore from "../store/cartStore"; // تم تصحيح الاسم ليطابق default export
+import useStore from "../store/CartStore"; // تم تصحيح الاسم ليطابق default export
 
 export default function CartItem({ item }) {
   const increaseQty = useStore((state) => state.increaseQty);

@@ -1,6 +1,6 @@
 // import React from "react";
 // import CartItem from "./CartItem";
-// import useCartStore from "../store/cartStore";
+// import useCartStore from "../store/CartStore";
 
 // export default function CartList() {
 //   const cart = useCartStore((state) => state.cart);
@@ -23,7 +23,7 @@
 
 import React from "react";
 import CartItem from "./CartItem";
-import useStore from "../store/cartStore"; // تم تصحيح الاسم
+import useStore from "../store/CartStore"; // تم تصحيح الاسم
 
 export default function CartList() {
   const cart = useStore((state) => state.cart);
