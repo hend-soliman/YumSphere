@@ -28,7 +28,7 @@ export default function LocationTiming() {
             const elData = elements.find((el) => el.ref.current === entry.target);
             if (elData) {
               entry.target.classList.add("animate__animated", elData.className);
-              observer.unobserve(entry.target); // تظهر مرة واحدة فقط
+              observer.unobserve(entry.target); 
             }
           }
         });
@@ -62,20 +62,20 @@ export default function LocationTiming() {
             <div className="bg-white h-60 rounded-md shadow-sm p-10">
               <div className="space-y-2 text-sm text-[#748194]">
                 <p className="flex gap-2 items-center">
-                  <FaMap className="text-xl text-[#FF806E]" />
+                  <FaMap className="text-xl text-[#ffc554]" />
                   Av. Paz Soldán 290, San Isidro, Lima 27 - Peru
                 </p>
                 <p className="flex gap-2 items-center">
-                  <FaPhone className="text-[#FF806E]" /> +511 442-2777
+                  <FaPhone className="text-[#ffc554]" /> +511 442-2777
                 </p>
                 <p className="flex gap-2 items-center">
-                  <FaEnvelope className="text-[#FF806E]" /> mail@restaurantpro.com
+                  <FaEnvelope className="text-[#ffc554]" /> mail@restaurantpro.com
                 </p>
               </div>
             </div>
 
             <div className="bg-white h-60 rounded-md shadow-sm p-10">
-              <h4 className="text-[#FF806E] text-sm font-semibold mb-4">
+              <h4 className="text-[#ffc554] text-sm font-semibold mb-4">
                 Hours of service
               </h4>
               <p className="text-sm text-[#0b1727]">Monday to Saturday</p>
@@ -90,14 +90,14 @@ export default function LocationTiming() {
             <div className="bg-white h-60 rounded-md shadow-sm p-10 flex flex-col justify-between relative">
               <img ref={dishRef} src={dish} className="absolute top-2 right-2 w-24 md:w-32 opacity-0"/>
               <div>
-                <h4 className="text-[#FF806E] text-sm font-semibold mb-4">
+                <h4 className="text-[#ffc554] text-sm font-semibold mb-4">
                   Telephone support:
                 </h4>
                 <p className="text-sm text-[#748194] mb-8">
                   Monday to Saturday from <br />
                   9:00 am to 9:00 pm
                 </p>
-                <button onClick={() => setOpenReservation(true)} className="btn bg-[#FF806E] text-white px-8 py-2 rounded-md border-0">
+                <button onClick={() => setOpenReservation(true)} className="btn bg-[#ffc554] font-bold text-[#4d5969] px-8 py-2 rounded-md border-0">
                   MAKE A RESERVATION
                 </button>
               </div>

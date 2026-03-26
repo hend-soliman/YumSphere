@@ -43,7 +43,7 @@
 //       backgroundImage: "url('/images/menu/backgrounds/upper-background.jpg')",
 //     }}
 //   ></div>
-//   <div className="absolute inset-0 bg-black/35"></div>
+//   <div className="absolute inset-0"></div>
 //    <div className='relative z-30 w-full lg:w-[60%] flex justify-center items-center mb-[-24px] '>
 //           {menuItems.map((tab) => {
      
@@ -56,7 +56,7 @@
 //           className={`w-[20%] h-[40px] rounded-3xl text-sm lg:rounded-0 lg:text-lg border border-gray-400 text-center flex justify-center items-center
 //     transition-colors duration-200
 //     ${activeTab === tab
-//       ? "bg-neutral-900 text-yellow-500 shadow-md scale-105 lg:scale-100 font-semibold border-0 border-b-3 border-yellow-500"
+//       ? "bg-[#ffc554] text-gray-100 shadow-md scale-105 lg:scale-100 font-semibold border-0 border-b-3 border-yellow-500"
 //       : "bg-gray-100 text-gray-500 hover:bg-neutral-200 hover:text-black"}`}
 //         >{tab}</button>
 //           )})
@@ -77,7 +77,7 @@
 // >
 //   {/* طبقة شفافية خفيفة فوق الخلفية علشان تبرز الكلام */}
 //   <div className=" absolute inset-0 bg-white/70 "></div>
-//   <div className="absolute inset-0 bg-black/35 blur-lg"></div>
+//   <div className="absolute inset-0 blur-lg"></div>
 
 //   {/* المحتوى */}
 //   <div className="relative z-20 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
@@ -189,7 +189,7 @@ export default function MenuPage() {
   const isLoggedIn = useStore((state) => state.isLoggedIn);
 
   const menuItems = [
-    { id: 1, name: "Pizza Margherita", price: 12, img: "" }, // صورة فارغة مؤقتاً
+    { id: 1, name: "Pizza Margherita", price: 12, img: "" }, 
     { id: 2, name: "Spaghetti Bolognese", price: 15, img: "" },
     { id: 3, name: "Caesar Salad", price: 10, img: "" },
   ];
@@ -215,7 +215,7 @@ export default function MenuPage() {
               {/* Placeholder للصورة */}
               <span className="text-gray-500">Image</span>
             </div>
-            <h2 className="text-xl font-semibold">{item.name}</h2>
+            <h2 className="text-[#0b1727] text-xl font-semibold">{item.name}</h2>
             <p className="text-lg text-orange-500">${item.price}</p>
             <button
               onClick={() => handleAddToCart(item)}

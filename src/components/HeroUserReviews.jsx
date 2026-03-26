@@ -8,7 +8,7 @@ export default function HeroUserReviews({visibleReviews, pizzaSlides}) {
           return (
             
                 <div className="w-full realtive">
-                    <div className="absolute inset-0 bg-orange-200 rounded-xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-100 via-white to-yellow-50 rounded-xl"></div>
             
                 <div key={index} className='relative top-[10%] lg:left-[30%] lg:top-[0] lg:flex lg:justify-center w-full h-[200px] px-5 lg:px-0  lg:w-[40%]  lg:overflow-visible h-dvh lg:min-h-[350px]  flex flex-col gap-5 items-center'>
               <RiDoubleQuotesL className="text-black text-xl" />

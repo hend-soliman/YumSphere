@@ -5,7 +5,7 @@ export default function HeroUserReviewForm({validationSchema, giveOpenion}) {
   return (
     <div className="w-full flex flex-col mb-16 lg:mb-0 pt-0  lg:pt-5">
         <section className="w-full flex flex-col items-center  lg:px-0 gap-3 pb-10">
-          <h1 className=" text-[19px] px-5 w-full lg:text-5xl text-neutral-950 font-extrabold lg:font-bold ">
+          <h1 className="  px-5 w-full lg:text-5xl lg:font-bold  text-[44px] font-bold text-[#0b1727]">
             Feel free to drop us a line!
           </h1>
 
@@ -107,9 +107,9 @@ export default function HeroUserReviewForm({validationSchema, giveOpenion}) {
                   <Field
                     type="checkbox"
                     name="checked"
-                    className="checkbox border-4 border-orange-400 opacity-20
+                    className="checkbox border-4 border-[#ffc554] opacity-20
                       checked:bg-orange-500 checked:opacity-60
-                      checked:border-orange-300 checked:text-white
+                      checked:border-[#ffc554] checked:text-white
                       
                       "
                   />

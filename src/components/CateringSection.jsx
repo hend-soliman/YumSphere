@@ -48,7 +48,7 @@ export default function CateringSection() {
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <span className="text-2xl font-bold text-[#4d5969]">Catering</span>
 
-        <h2 ref={titleRef} className="text-4xl md:text-5xl mt-4 text-[#0b1727] opacity-0">
+        <h2 ref={titleRef} className=" md:text-5xl mt-4  text-[44px] font-bold text-[#0b1727] opacity-0">
           We Manage Your Events
         </h2>
 
