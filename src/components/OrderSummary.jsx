@@ -22,7 +22,7 @@ export default function OrderSummary() {
           value={coupon}
           onChange={(e) => setCoupon(e.target.value)}
           className="flex-1 border rounded-lg px-3 py-2"/>
-        <button className="text-orange-500 font-medium">Apply</button>
+        <button className="text-[#ffc554] font-medium">Apply</button>
       </div>
 
       <div className="flex justify-between text-sm">
@@ -41,7 +41,7 @@ export default function OrderSummary() {
       </div>
 
       <button onClick={() => navigate("/checkout")}
-        className="w-full mt-4 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+        className="w-full mt-4 bg-[#ffc554] text-white py-2 rounded-lg hover:bg-orange-500 transition">
         Proceed to Checkout
       </button>
     </div>

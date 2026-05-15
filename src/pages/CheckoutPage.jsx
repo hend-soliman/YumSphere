@@ -56,7 +56,7 @@ export default function CheckoutPage() {
             </div>
 
             <button type="submit"
-              className="mt-6 w-full bg-[#ffc554] text-white py-2 rounded-lg hover:bg-orange-400 transition-colors">
+              className="mt-6 w-full bg-[#ffc554] text-white py-2 rounded-lg hover:bg-orange-500 transition-colors">
               Place Order
             </button>
           </form>

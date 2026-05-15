@@ -1,14 +1,16 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import cateringImg from "../assets/pancake_PNG94.png";
 
 export default function CateringSection() {
-  const scrollToLocation = () => {
-    const section = document.getElementById("location-timing");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToLocation = () => {
+  //   const section = document.getElementById("location-timing");
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
+const navigate = useNavigate();
   const titleRef = useRef(null);
   const paragraphRef = useRef(null);
   const imgWrapperRef = useRef(null);
@@ -70,7 +72,7 @@ export default function CateringSection() {
               We Cater in Weddings, <br /> Corporate Functions <br /> and Events
             </h3>
 
-            <button onClick={scrollToLocation}
+            <button onClick={() => navigate("/contact")}
               className="btn bg-[#ffc554] font-bold text-[#4d5969] border-none hover:bg-[#ffc554] shadow-md hover:shadow-lg px-8 py-3 text-[16px] md:text-[18px]">
               HIRE US NOW
             </button>

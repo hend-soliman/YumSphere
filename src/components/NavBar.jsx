@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi";
 import { FiShoppingCart, FiLogIn } from "react-icons/fi";
-
+import logo from '../assets/logo.png';
 export default function NavBar() {
 
   const links = [
@@ -16,21 +16,19 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-black">
+    <nav className="h-20 w-full bg-black">
       <div className="container mx-auto max-w-6xl">
 
-        <div className="flex items-center justify-between py-4 relative">
+        <div className="flex items-center justify-between  relative">
 
           <button
             className="md:hidden text-white hover:text-[#ffc554] order-1"
             onClick={() => setIsOpen(!isOpen)}>
             <HiMenu size={28} />
           </button>
-
-          <h1 className="text-3xl font-bold text-white mx-auto md:mx-0 order-2 md:order-1">
-            logo
-          </h1>
-
+           <Link to="/">
+           <img src={logo}  alt="YumSphere Logo" className="h-full max-h-25 w-auto object-contain transition-transform duration-300 hover:scale-105"/>
+           </Link>
           <ul className="hidden md:flex gap-6 absolute left-1/2 transform -translate-x-1/2">
             {links.map((link) => (
               <li key={link.path}>

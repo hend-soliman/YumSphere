@@ -166,19 +166,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useStore from "../store/CartStore";
@@ -228,3 +215,12 @@ export default function MenuPage() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+

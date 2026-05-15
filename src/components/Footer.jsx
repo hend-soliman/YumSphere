@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import "animate.css";
 import forkImage from "../assets/pastafork.png";
@@ -6,6 +7,8 @@ import forkImage from "../assets/pastafork.png";
 import { FaFacebookSquare } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaGooglePlusSquare } from "react-icons/fa";
+
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -40,7 +43,9 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="flex flex-col items-start relative z-10 md:col-span-1">
-          <h1 className="text-3xl font-bold mb-4">Logo</h1>
+            <Link to="/">
+           <img src={logo}  alt="YumSphere Logo" className="h-full max-h-25 w-auto object-contain transition-transform duration-300 hover:scale-105"/>
+           </Link>
           <p className="text-xl mb-4">Want To Taste Our Food?</p>
           <button onClick={() => navigate("/menu")}
             className="bg-[#ffc554] text-[#0e1a2b] px-6 py-2 rounded font-semibold hover:bg-yellow-500 cursor-pointer transition duration-300">
@@ -52,7 +57,7 @@ export default function Footer() {
           <div className="text-left flex-1">
             <h4 className="font-semibold mb-2">ABOUT</h4>
             <ul className="text-gray-400 space-y-1">
-              <li className="hover:text-[#ffc554] cursor-pointer transition">About</li>
+              <li onClick={() => navigate("/about")}  className="hover:text-[#ffc554] cursor-pointer transition">About</li>
               <li className="hover:text-[#ffc554] cursor-pointer transition">Services</li>
               <li className="hover:text-[#ffc554] cursor-pointer transition">Careers</li>
               <li className="hover:text-[#ffc554] cursor-pointer transition">Hire Us</li>

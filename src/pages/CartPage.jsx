@@ -29,7 +29,7 @@ export default function CartPage() {
       </div>
 
       <img src={chburg} alt="decorative"
-        className="hidden md:block absolute bottom-0 left-0 w-72 md:w-80 opacity-90 pointer-events-none object-contain"/>
+        className="hidden md:block absolute bottom-0 right-0 w-72 md:w-80 opacity-90 pointer-events-none object-contain"/>
     </div>
   );
 }
