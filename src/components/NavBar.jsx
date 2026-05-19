@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi";
 import { FiShoppingCart, FiLogIn } from "react-icons/fi";
 import logo from '../assets/logo.png';
+
 export default function NavBar() {
 
   const links = [
@@ -19,28 +19,31 @@ export default function NavBar() {
     <nav className="h-20 w-full bg-black">
       <div className="container mx-auto max-w-6xl">
 
-        <div className="flex items-center justify-between  relative">
+        <div className="flex items-center justify-between relative h-20 px-4">
 
           <button
             className="md:hidden text-white hover:text-[#ffc554] order-1"
             onClick={() => setIsOpen(!isOpen)}>
             <HiMenu size={28} />
           </button>
-           <Link to="/">
-           <img src={logo}  alt="YumSphere Logo" className="h-full max-h-25 w-auto object-contain transition-transform duration-300 hover:scale-105"/>
-           </Link>
+
+          <Link to="/"
+            className="absolute left-1/2 transform -translate-x-1/2 md:static md:transform-none">
+            <img
+              src={logo}
+              alt="YumSphere Logo"
+              className="h-14 md:h-full max-h-25 w-auto object-contain transition-transform duration-300 hover:scale-105"/>
+          </Link>
+
           <ul className="hidden md:flex gap-6 absolute left-1/2 transform -translate-x-1/2">
             {links.map((link) => (
               <li key={link.path}>
                 <NavLink
                   to={link.path}
-                  className={({ isActive }) =>
-                    `transition transform duration-200 ${
+                  className={({ isActive }) =>`transition transform duration-200 ${
                       isActive
                         ? "text-[#ffc554] scale-105"
-                        : "text-[#748194] hover:text-[#ffc554] hover:scale-105"
-                    }` }>
-
+                        : "text-[#748194] hover:text-[#ffc554] hover:scale-105"}`}>
                   {link.name}
                 </NavLink>
               </li>
@@ -62,11 +65,18 @@ export default function NavBar() {
         </div>
 
         {isOpen && (
-          <ul className="md:hidden flex flex-col gap-4 py-4">
+          <ul className="md:hidden absolute top-20 left-0 w-full bg-black flex flex-col gap-4 py-4 px-6 z-50 border-t border-gray-800">
             {links.map((link) => (
               <li key={link.path}>
-                <NavLink to={link.path} onClick={() => setIsOpen(false)} className={({ isActive }) =>
-                 `block transition transform duration-200 ${isActive? "text-[#ffc554] scale-105" : "text-[#748194] hover:text-[#ffc554] hover:scale-105"}`}>{link.name}
+                <NavLink
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `block transition transform duration-200 ${
+                      isActive
+                        ? "text-[#ffc554] scale-105"
+                        : "text-[#748194] hover:text-[#ffc554] hover:scale-105"}`}>
+                  {link.name}
                 </NavLink>
               </li>
             ))}
@@ -77,24 +87,3 @@ export default function NavBar() {
     </nav>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
